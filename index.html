@@ -168,9 +168,9 @@
             const { data, error } = await supabaseClient
                 .schema('project1')
                 .from('summary_disbursement') 
-                .select('vendor,tanggal_transaksi,keterangan,jumlah_transaksi,penambahan_rupiah,pengurangan_rupiah,jumlah_transaksi_reversal,rupiah_reversal,jumlah_transaksi_reversal_beda_hari,rupiah_reversal_beda_hari,jumlah_transaksi_tanpa_reversal,rupiah_tanpa_reversal,rekonsiliasi_jumlah_transaksi,rekonsiliasi_rupiah,rekonsiliasi_tambah_kurang,saldo_rekonsiliasi_rupiah')
-                .gte('tanggal_transaksi', start)
-                .lte('tanggal_transaksi', end)
+                .select('vendor,tanggal_proses,keterangan,jumlah_transaksi,penambahan_rupiah,pengurangan_rupiah,jumlah_transaksi_reversal,rupiah_reversal,jumlah_transaksi_reversal_beda_hari,rupiah_reversal_beda_hari,jumlah_transaksi_tanpa_reversal,rupiah_tanpa_reversal,rekonsiliasi_jumlah_transaksi,rekonsiliasi_rupiah,rekonsiliasi_tambah_kurang,saldo_rekonsiliasi_rupiah')
+                .gte('tanggal_proses', start)
+                .lte('tanggal_proses', end)
                 .order('urutan', { ascending: true });
 
             if (error) throw error;
@@ -226,3 +226,4 @@
 
 </body>
 </html>
+
